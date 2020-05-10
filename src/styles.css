@@ -1,0 +1,8 @@
+.App {
+  font-size: 100%;
+  font-family: "Tw Cen MT", Arial, Helvetica, sans-serif;
+  font-style: normal; /*normal, italic, oblique (obl.-similar to italic*/
+  font-weight: normal; /*normal, bold*/
+  text-align: justify; /*justify, left, right, center*/
+  color: black;
+}
