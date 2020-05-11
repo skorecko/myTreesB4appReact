@@ -1,7 +1,7 @@
 {
-  "name": "mytreesb4appreact",
+  "name": "mytreesb4appvanilla",
   "version": "1.0.0",
-  "description": "",
+  "description": "My Trees blog with back4app backend for opinions. Created using React.",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
