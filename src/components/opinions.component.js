@@ -1,10 +1,20 @@
+/*
+Single-page React app with client-side routing and back4ap backend.
+Stefan Korecko, 2020
+
+partially inspired by 
+https://reactjs.org/docs/faq-ajax.html
+https://reactjs.org/docs/forms.html
+https://bezkoder.com/react-crud-web-api/
+*/
+
 import React from "react";
 
 /*
-inspired by https://reactjs.org/docs/faq-ajax.html
+
 */
 
-export default class SKorDropdownMenu extends React.Component {
+export default class AddOpinion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,7 +57,7 @@ export default class SKorDropdownMenu extends React.Component {
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
         // exceptions from actual bugs in components.
-        // (a separate .catch() instead of this will also catch errors inside the previous anon. function definition)
+        // (a separate .catch() instead of this will also catch errors inside the previous anon. function call)
         error => {
           //promise rejeced
           this.setState({
@@ -85,7 +95,7 @@ export default class SKorDropdownMenu extends React.Component {
             <h2>Visitor Opinions</h2>
             {acquiredData.map(opinion => (
               <section key={opinion.objectId}>
-                {/* For keys, see https://reactjs.org/tutorial/tutorial.html#picking-a-key */}
+                {/* To learn more about keys, see https://reactjs.org/tutorial/tutorial.html#picking-a-key */}
                 <h3>{opinion.name} </h3>
                 <p>{opinion.comment}</p>
                 <p>

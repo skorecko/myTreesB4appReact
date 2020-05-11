@@ -1,3 +1,13 @@
+/*
+Single-page React app with client-side routing and back4ap backend.
+Stefan Korecko, 2020
+
+partially inspired by 
+https://reactjs.org/docs/faq-ajax.html
+https://reactjs.org/docs/forms.html
+https://bezkoder.com/react-crud-web-api/
+*/
+
 import React from "react";
 
 /*
@@ -21,8 +31,8 @@ export default class SKorDropdownMenu extends React.Component {
       <div>
         <button
           className="btDropdownMenu"
-          onClick={event => {
-            return this.handleClick(event);
+          onClick={() => {
+            return this.handleClick();
           }}
         >
           Menu
@@ -31,6 +41,15 @@ export default class SKorDropdownMenu extends React.Component {
       </div>
     );
   }
+  /*
+  Above, we used  an arrow function in the callback to assign the handleClick()
+  method to the click event of the button. This means that the method is re-assigned every time the
+  component is rendered. Here it is OK, but it may cause problems in some more
+  complex situations. 
+  An alternate approach is to bind in the constructor (we use it in add-opinion.component.js)
+  or to use the class fields syntax
+  Read more at https://reactjs.org/docs/handling-events.html 
+   */
 
   /*
     from https://reactjs.org/docs/react-component.html#componentdidmount:
@@ -38,6 +57,11 @@ export default class SKorDropdownMenu extends React.Component {
     (inserted into the tree). Initialization that requires DOM nodes 
     should go here. If you need to load data from a remote endpoint, 
     this is a good place to instantiate the network request.
+
+    Learn more about the React component lifecycle at
+    https://reactjs.org/docs/react-component.html#the-component-lifecycle
+    or look on the diagram
+    http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
   */
   componentDidMount() {
     document.addEventListener("click", event => {
@@ -49,7 +73,7 @@ export default class SKorDropdownMenu extends React.Component {
     });
   }
 
-  handleClick(event) {
+  handleClick() {
     this.setState({ shouldBeSeen: !this.state.shouldBeSeen });
   }
 }

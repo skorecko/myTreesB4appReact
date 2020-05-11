@@ -1,3 +1,13 @@
+/*
+Single-page React app with client-side routing and back4ap backend.
+Stefan Korecko, 2020
+
+partially inspired by 
+https://reactjs.org/docs/faq-ajax.html
+https://reactjs.org/docs/forms.html
+https://bezkoder.com/react-crud-web-api/
+*/
+
 import React from "react";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -8,14 +18,30 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //Alternatively, we have to name all imported items:
 //import {Welcome, Articles, Opinions, AddOpinion} from "./components/html-components.js";
 //But in this case it is easy to exclude the ones we do not want to import:
-import { Welcome, Articles, AddOpinion } from "./components/html-components.js";
+import { Welcome, Articles } from "./components/html-components.js";
 
 import Opinions from "./components/opinions.component.js";
+import AddOpinion from "./components/add-opinion.component.js";
 
 import SKorDropdownMenu from "./components/skor-dropdown-menu.component.js";
 
 import "./styles.css";
 
+/*
+The syntax used inside of the return command below and 
+on other places in this application is 
+JSX (JavaScript XML), which allows to mix
+HTML with JavaScript expressions.
+However, it is more than a templating language, because it also allows, 
+for example, to instantiate and compose React components 
+(i.e. objects of classes inheriting from React.Component) 
+in an HTML-like way.
+
+Read more at
+https://reactjs.org/docs/introducing-jsx.html
+and
+https://reactjs.org/docs/jsx-in-depth.html
+*/
 export default function App() {
   return (
     <Router>

@@ -1,3 +1,13 @@
+/*
+Single-page React app with client-side routing and back4ap backend.
+Stefan Korecko, 2020
+
+partially inspired by 
+https://reactjs.org/docs/faq-ajax.html
+https://reactjs.org/docs/forms.html
+https://bezkoder.com/react-crud-web-api/
+*/
+
 import React from "react";
 
 /*
@@ -62,6 +72,8 @@ export function Articles() {
     </main>
   );
 }
+
+//The rest is not used in the final application.
 
 export function Opinions() {
   return (
