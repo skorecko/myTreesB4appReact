@@ -11,7 +11,7 @@ https://bezkoder.com/react-crud-web-api/
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default class Opinions extends React.Component {
+export default class AddOpinion extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.initState;
